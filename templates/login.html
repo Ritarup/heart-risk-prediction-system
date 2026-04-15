@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HeartAI - Welcome</title>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg: #f4f6f8;
+            --text: #1f2937;
+            --muted: #6b7280;
+        }
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: var(--bg);
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .auth-card {
+            background: #fff;
+            padding: 30px;
+            width: 340px;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+            text-align: center;
+        }
+
+        h2 {
+            margin-bottom: 5px;
+            color: var(--text);
+        }
+
+        p {
+            margin-bottom: 20px;
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        .flash-msg {
+            background: #e6f4ea;
+            color: #1e7e34;
+            padding: 8px;
+            border-radius: 6px;
+            margin-bottom: 15px;
+            font-size: 13px;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            margin: 8px 0;
+            border: 1px solid #d1d5db;
+            border-radius: 8px;
+            font-size: 14px;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            margin-top: 10px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            opacity: 0.9;
+        }
+
+        .switch {
+            margin-top: 15px;
+            font-size: 13px;
+            color: var(--muted);
+        }
+
+        .switch a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        form{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+    </style>
+</head>
+<body>
+
+<div class="auth-card">
+    <h2>HeartAI</h2>
+    <p>Risk Prediction System</p><br><h3>Log in</h3><br>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        {% for category, message in messages %}
+          <div class="flash-msg">{{ message }}</div>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+
+    <form method="POST">
+        <input type="text" name="username" placeholder="Username" required>
+        <input type="password" name="password" placeholder="Password" required>
+        <button type="submit">Continue</button>
+    </form>
+
+    <div class="switch">
+        {% if request.path == '/login' %}
+            New here? <a href="/register">Create Account</a>
+        {% else %}
+            Have an account? <a href="/login">Sign In</a>
+        {% endif %}
+    </div>
+</div>
+
+</body>
+</html>
