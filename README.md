@@ -2,7 +2,7 @@
 
 A machine learning-powered web application that predicts heart disease risk using clinical parameters. Built with Flask, Scikit-learn, and SQLite, featuring user authentication, account registration, and real-time prediction.
 
-The application is deployed and can be accessed at: https://heart-risk-prediction-system-lhuz.onrender.com
+The application can be accessed at: https://heart-risk-prediction-system-lhuz.onrender.com
 
 ## Authentication & Access
 
