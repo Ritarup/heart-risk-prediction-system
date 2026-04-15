@@ -129,9 +129,9 @@ def predict():
         final_input = np.array(final_input).reshape(1, -1)
 
         prediction = model.predict(final_input)[0]
-        prob = model.predict_proba(final_input)[0][1]
+        
 
-        result_text = "High Risk" if prob > 0.6 else "Low Risk"
+        result_text = "High Risk" if prediction == 1 else "Low Risk"
 
         reasons = []
         if raw[4] > 240:
@@ -154,7 +154,6 @@ def predict():
         return render_template(
             'index.html',
             prediction_text=result_text,
-            prob=round(prob * 100, 2),
             factor=factor_msg,
             warning=warning_text
         )

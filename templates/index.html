@@ -244,17 +244,6 @@
         border: 1.5px solid rgba(26, 122, 74, 0.2);
       }
 
-      .confidence-line {
-        font-size: 13px;
-        color: #999999;
-        margin-top: 6px;
-      }
-
-      .confidence-line strong {
-        color: #333333;
-        font-weight: 600;
-      }
-
       .modal-body {
         padding: 18px 28px 22px;
       }
@@ -434,7 +423,6 @@
       </div>
     </div>
 
-    <!-- RESULT MODAL -->
     <div
       id="resultModal"
       class="modal-overlay {% if prediction_text %}active{% endif %}"
@@ -447,9 +435,6 @@
             class="risk-badge {{ 'high' if prediction_text == 'High Risk' else 'low' }}"
           >
             {{ prediction_text }}
-          </div>
-          <div class="confidence-line">
-            Confidence: <strong>{{ prob }}%</strong>
           </div>
           {% endif %}
         </div>
