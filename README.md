@@ -2,7 +2,7 @@
 
 A machine learning-powered web application that predicts heart disease risk using clinical parameters. Built with Flask, Scikit-learn, and MongoDB Atlas, featuring user authentication, account registration, and real-time prediction.
 
-The application can be accessed at: 
+The application can be accessed at: https://heart-risk-prediction-system-mu.vercel.app
 
 ## Authentication & Access
 
