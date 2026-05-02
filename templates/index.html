@@ -17,14 +17,14 @@
       }
 
       body {
-        background: #ffffff;
-        color: #111111;
-        min-height: 100vh;
+        background: #fff;
+        color: #111;
         font-size: 14px;
+        min-height: 100vh;
       }
 
       nav {
-        background: #111111;
+        background: #111;
         height: 60px;
         display: flex;
         align-items: center;
@@ -38,19 +38,16 @@
       .nav-brand {
         font-size: 16px;
         font-weight: 700;
-        color: #ffffff;
+        color: #fff;
         text-decoration: none;
-        letter-spacing: -0.2px;
       }
 
       .nav-logout {
-        color: #ffffff;
-        border: 1px solid #555555;
+        color: #fff;
+        border: 1px solid #555;
         padding: 6px 16px;
         border-radius: 7px;
-
         font-size: 13px;
-        font-weight: 500;
         text-decoration: none;
       }
 
@@ -67,14 +64,12 @@
       .page-header h1 {
         font-size: 26px;
         font-weight: 700;
-        letter-spacing: -0.4px;
         margin-bottom: 6px;
       }
 
       .page-header p {
         font-size: 14px;
-        color: #666666;
-        line-height: 1.5;
+        color: #666;
       }
 
       .card {
@@ -84,7 +79,7 @@
 
       .card-header {
         padding: 24px 28px;
-        border-bottom: 1px solid #eeeeee;
+        border-bottom: 1px solid #eee;
       }
 
       .card-header h2 {
@@ -95,93 +90,105 @@
 
       .card-header p {
         font-size: 14px;
-        color: #666666;
-        line-height: 1.55;
+        color: #666;
         max-width: 600px;
       }
 
-      .card-header .card-note {
+      .card-note {
         margin-top: 6px;
-        color: #999999;
+        color: #999;
+        font-size: 13px;
       }
 
       .card-body {
         padding: 28px;
       }
 
-      .section-label {
-        font-size: 11px;
-        font-weight: 600;
-        color: #aaaaaa;
-        text-transform: uppercase;
-        letter-spacing: 1.2px;
-        margin-bottom: 16px;
-        padding-bottom: 10px;
-        border-bottom: 1px solid #eeeeee;
-      }
-
       .form-grid {
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        gap: 16px;
-        margin-bottom: 28px;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 18px;
       }
 
-      .input-group {
+      .field {
         display: flex;
         flex-direction: column;
         gap: 6px;
       }
 
-      label {
+      .field label {
         font-size: 11px;
         font-weight: 600;
-        color: #555555;
+        color: #555;
         text-transform: uppercase;
-        letter-spacing: 0.7px;
       }
 
-      input[type="number"] {
+      .field-hint {
+        font-size: 11px;
+        color: #999;
+      }
+
+      input[type="number"],
+      select {
         padding: 10px 13px;
         border: 1.5px solid #e5e5e5;
         border-radius: 8px;
         font-size: 14px;
-        color: #111111;
+        color: #111;
         background: #fafafa;
         outline: none;
         width: 100%;
-        -moz-appearance: textfield;
       }
 
-      input[type="number"]::-webkit-outer-spin-button,
-      input[type="number"]::-webkit-inner-spin-button {
-        -webkit-appearance: none;
+      input:focus,
+      select:focus {
+        border-color: #111;
+        background: #fff;
       }
 
-      input[type="number"]:focus {
-        border-color: #111111;
-        background: #ffffff;
+      .checks-row {
+        display: flex;
+        gap: 24px;
+        flex-wrap: wrap;
+        margin-top: 4px;
       }
 
-      input[type="number"]::placeholder {
-        color: #ffffff;
+      .checks-row label {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 13px;
+        cursor: pointer;
+      }
+
+      .checks-row input {
+        width: 16px;
+        height: 16px;
+        cursor: pointer;
+      }
+
+      .row-br {
+        height: 1px;
+        background: #f0f0f0;
+        grid-column: 1 / -1;
+        margin: 4px 0;
       }
 
       .btn-predict {
         width: 100%;
-        padding: 13px 24px;
+        margin-top: 24px;
+        padding: 13px;
         background: #2563eb;
-        color: white;
+        color: #fff;
         border: none;
         border-radius: 8px;
         font-size: 14px;
         font-weight: 600;
         cursor: pointer;
-        margin-top: 4px;
       }
 
       .btn-predict:hover {
-        background: #2564ebe3;
+        background: #1d4ed8;
       }
 
       .modal-overlay {
@@ -200,27 +207,24 @@
       }
 
       .modal-box {
-        background: #ffffff;
+        background: #fff;
         border-radius: 16px;
-        width: 420px;
+        width: 440px;
         max-width: 92vw;
         box-shadow: 0 16px 48px rgba(0, 0, 0, 0.12);
         overflow: hidden;
-        animation: slideUp 0.25s ease;
       }
 
       .modal-top {
         padding: 28px 28px 22px;
         text-align: center;
-        border-bottom: 1px solid #eeeeee;
+        border-bottom: 1px solid #eee;
       }
 
       .modal-eyebrow {
         font-size: 11px;
-        font-weight: 600;
         text-transform: uppercase;
-        letter-spacing: 1.4px;
-        color: #aaaaaa;
+        color: #aaa;
         margin-bottom: 14px;
       }
 
@@ -236,12 +240,11 @@
       .risk-badge.high {
         background: #fce8e6;
         color: #c0392b;
-        border: 1.5px solid rgba(192, 57, 43, 0.2);
       }
+
       .risk-badge.low {
         background: #e8f5ee;
         color: #1a7a4a;
-        border: 1.5px solid rgba(26, 122, 74, 0.2);
       }
 
       .modal-body {
@@ -253,25 +256,14 @@
         padding: 14px 16px;
         margin-bottom: 10px;
         font-size: 14px;
-        line-height: 1.6;
       }
 
-      .insight-block.risk-high,
-      .insight-block.risk-low {
+      .insight-block.risk-high {
         background: #fdf1f0;
       }
 
-      .insight-block .insight-title {
-        font-size: 11px;
-        font-weight: 600;
-        text-transform: uppercase;
-        letter-spacing: 0.8px;
-        color: #181818;
-        margin-bottom: 5px;
-      }
-
-      .insight-block p {
-        color: #222222;
+      .insight-block.risk-low {
+        background: #f0faf5;
       }
 
       .warning-block {
@@ -279,7 +271,7 @@
         border: 1px solid #f0c040;
         border-radius: 8px;
         padding: 10px 14px;
-        font-size: 14px;
+        font-size: 13px;
         color: #7a5c00;
         margin-bottom: 10px;
       }
@@ -292,7 +284,7 @@
         width: 100%;
         padding: 11px;
         background: #f4f4f4;
-        color: #333333;
+        color: #333;
         border: none;
         border-radius: 8px;
         font-size: 14px;
@@ -320,7 +312,7 @@
         }
       }
 
-      @media (max-width: 420px) {
+      @media (max-width: 440px) {
         .form-grid {
           grid-template-columns: 1fr;
         }
@@ -329,16 +321,16 @@
   </head>
   <body>
     <nav>
-      <a href="/" class="nav-brand">Heart<span>AI</span></a>
+      <a href="/" class="nav-brand">HeartAI</a>
       <a href="/logout" class="nav-logout">Logout</a>
     </nav>
 
     <div class="page-wrap">
       <div class="page-header">
-        <h1>Risk Factor Analysis</h1>
+        <h1>Cardiovascular Risk Analysis</h1>
         <p>
-          Enter patient clinical data to generate an AI-powered cardiac risk
-          assessment.
+          Enter patient clinical data to generate an AI-powered cardiovascular
+          risk assessment.
         </p>
       </div>
 
@@ -346,72 +338,136 @@
         <div class="card-header">
           <h2>Patient Data Input</h2>
           <p>
-            This tool uses 13 clinical indicators to evaluate the likelihood of
-            heart disease using a trained machine learning model. Results are
-            intended to assist clinical decision-making and should not replace
-            professional medical judgement.
+            Uses 11 clinical indicators to evaluate cardiovascular disease
+            likelihood. Results assist clinical decision-making and should not
+            replace professional medical judgement.
           </p>
-          <p class="card-note">
-            We suggest you input all fields to get the most accurate result.
-            However, you can skip any field — empty fields will default to
-            population averages.
-          </p>
+          <p class="card-note">Empty fields default to population averages.</p>
         </div>
+
         <div class="card-body">
-          <form action="/predict" method="POST">
-            <div class="section-label">Clinical Indicators</div>
+          <form action="/predict" method="POST" id="predictForm">
             <div class="form-grid">
-              <div class="input-group">
-                <label>Age</label>
-                <input type="number" name="age" />
+              <div class="field">
+                <label for="age">Age (years)</label>
+                <input
+                  type="number"
+                  id="age"
+                  name="age"
+                  placeholder="e.g. 45"
+                  min="1"
+                  max="120"
+                />
+                <span class="field-hint">Valid range: 1 – 120</span>
               </div>
-              <div class="input-group">
-                <label>Sex (1=M, 0=F)</label>
-                <input type="number" name="sex" min="0" max="1" />
+
+              <div class="field">
+                <label for="height">Height (cm)</label>
+                <input
+                  type="number"
+                  id="height"
+                  name="height"
+                  placeholder="e.g. 170"
+                  min="50"
+                  max="250"
+                />
+                <span class="field-hint">Valid range: 50 – 250</span>
               </div>
-              <div class="input-group">
-                <label>Resting BP (mmHg)</label>
-                <input type="number" name="trestbps" />
+
+              <div class="field">
+                <label for="weight">Weight (kg)</label>
+                <input
+                  type="number"
+                  id="weight"
+                  name="weight"
+                  placeholder="e.g. 75"
+                  min="10"
+                  max="300"
+                />
+                <span class="field-hint">Valid range: 10 – 300</span>
               </div>
-              <div class="input-group">
-                <label>Cholesterol (mg/dl)</label>
-                <input type="number" name="chol" />
+
+              <div class="row-br"></div>
+
+              <div class="field">
+                <label for="ap_hi">Systolic BP (mmHg)</label>
+                <input
+                  type="number"
+                  id="ap_hi"
+                  name="ap_hi"
+                  placeholder="e.g. 120"
+                  min="60"
+                  max="300"
+                />
+                <span class="field-hint"
+                  >Normal &lt;120 · Elevated 120–129 · High ≥130</span
+                >
               </div>
-              <div class="input-group">
-                <label>Max Heart Rate</label>
-                <input type="number" name="thalach" />
+
+              <div class="field">
+                <label for="ap_lo">Diastolic BP (mmHg)</label>
+                <input
+                  type="number"
+                  id="ap_lo"
+                  name="ap_lo"
+                  placeholder="e.g. 80"
+                  min="40"
+                  max="200"
+                />
+                <span class="field-hint">Normal &lt;80 · High ≥80</span>
               </div>
-              <div class="input-group">
-                <label>Fasting Blood Sugar</label>
-                <input type="number" name="fbs" min="0" max="1" />
+
+              <div class="row-br"></div>
+
+              <div class="field">
+                <label for="cholesterol">Cholesterol Level</label>
+                <select id="cholesterol" name="cholesterol">
+                  <option value="1">Normal (&lt; 200 mg/dL)</option>
+                  <option value="2">Above Normal (200 – 239 mg/dL)</option>
+                  <option value="3">Well Above Normal (≥ 240 mg/dL)</option>
+                </select>
               </div>
-              <div class="input-group">
-                <label>Chest Pain Type (0–3)</label>
-                <input type="number" name="cp" min="0" max="3" />
+
+              <div class="field">
+                <label for="gluc">Glucose Level (Fasting)</label>
+                <select id="gluc" name="gluc">
+                  <option value="1">Normal (&lt; 100 mg/dL)</option>
+                  <option value="2">Above Normal (100 – 125 mg/dL)</option>
+                  <option value="3">Well Above Normal (≥ 126 mg/dL)</option>
+                </select>
               </div>
-              <div class="input-group">
-                <label>Resting ECG (0–2)</label>
-                <input type="number" name="restecg" min="0" max="2" />
+
+              <div class="field">
+                <label for="gender">Biological Sex</label>
+                <select id="gender" name="gender">
+                  <option value="1">Female</option>
+                  <option value="2">Male</option>
+                </select>
               </div>
-              <div class="input-group">
-                <label>Exercise Angina (1/0)</label>
-                <input type="number" name="exang" min="0" max="1" />
-              </div>
-              <div class="input-group">
-                <label>ST Depression</label>
-                <input type="number" step="0.1" name="oldpeak" />
-              </div>
-              <div class="input-group">
-                <label>ST Slope (0–2)</label>
-                <input type="number" name="slope" min="0" max="2" />
-              </div>
-              <div class="input-group">
-                <label>Major Vessels (0–3)</label>
-                <input type="number" name="ca" min="0" max="3" />
-              </div>
-              <div class="input-group">
-                <label>Thal (1–3)</label>
-                <input type="number" name="thal" min="1" max="3" />
+
+              <div class="row-br"></div>
+
+              <div class="field" style="grid-column: 1 / -1">
+                <label>Lifestyle Factors</label>
+                <div class="checks-row">
+                  <label
+                    ><input type="checkbox" name="smoke" id="smoke" value="1" />
+                    Smoker</label
+                  >
+                  <label
+                    ><input type="checkbox" name="alco" id="alco" value="1" />
+                    Alcohol Use</label
+                  >
+                  <label
+                    ><input
+                      type="checkbox"
+                      name="active"
+                      id="active"
+                      value="1"
+                    />
+                    Physically Active</label
+                  >
+                </div>
               </div>
             </div>
 
@@ -429,7 +485,7 @@
     >
       <div class="modal-box">
         <div class="modal-top">
-          <div class="modal-eyebrow">AI Cardiac Risk Report</div>
+          <div class="modal-eyebrow">AI Cardiovascular Risk Report</div>
           {% if prediction_text %}
           <div
             class="risk-badge {{ 'high' if prediction_text == 'High Risk' else 'low' }}"
@@ -438,7 +494,6 @@
           </div>
           {% endif %}
         </div>
-
         <div class="modal-body">
           {% if warning %}
           <div class="warning-block">{{ warning }}</div>
@@ -446,12 +501,11 @@
           <div
             class="insight-block {{ 'risk-high' if prediction_text == 'High Risk' else 'risk-low' }}"
           >
-            <div class="insight-title">Key Contributing Factors</div>
+            <div class="insight-title">Key Contributing Factors :</div>
             <p>{{ factor }}</p>
           </div>
           {% endif %}
         </div>
-
         <div class="modal-footer">
           <button class="btn-dismiss" onclick="closeModal()">Dismiss</button>
         </div>
