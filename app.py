@@ -41,7 +41,7 @@ def register():
             return redirect(url_for('register'))
         
         users.insert_one({"username": username, "password": generate_password_hash(password)})
-        flash("Registration successful!", "success")
+        flash("Registration successful! Please log in.", "success")
         return redirect(url_for('login'))
     return render_template('register.html')
 
@@ -83,7 +83,7 @@ def predict():
         if final_input[0] > 55: reasons.append("Age over 55")
         
         factor_msg = ", ".join(reasons) if reasons else "General health indicators."
-        warning_text = f"{missing_count} were missing — clinical averages used." if missing_count > 0 else ""
+        warning_text = f"{missing_count} fields were missing — clinical averages used." if missing_count > 0 else ""
 
         return render_template('index.html', prediction_text=result_text, factor=factor_msg, warning=warning_text)
     except Exception as e:
