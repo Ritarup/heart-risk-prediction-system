@@ -41,7 +41,7 @@ def register():
             return redirect(url_for('register'))
         
         users.insert_one({"username": username, "password": generate_password_hash(password)})
-        flash("Registration successful! Please log in.", "success")
+        flash("Registration successful. Please log in.", "success")
         return redirect(url_for('login'))
     return render_template('register.html')
 
