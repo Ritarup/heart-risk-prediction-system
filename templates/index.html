@@ -275,6 +275,16 @@
         color: #7a5c00;
         margin-bottom: 10px;
       }
+      .card-note {
+        margin-top: 10px;
+        font-size: 13px;
+        color: #121212 !important;
+        background: #fff7ed;
+        border: 1px solid #fed7aa;
+        padding: 10px 12px;
+        border-radius: 8px;
+      }
+      
 
       .modal-footer {
         padding: 0 28px 26px;
@@ -342,7 +352,9 @@
             likelihood. Results assist clinical decision-making and should not
             replace professional medical judgement.
           </p>
-          <p class="card-note">Empty fields default to population averages.</p>
+          <p class="card-note">
+            Any fields left blank will be filled with population averages.
+          </p>
         </div>
 
         <div class="card-body">
@@ -359,6 +371,14 @@
                   max="120"
                 />
                 <span class="field-hint">Valid range: 1 – 120</span>
+              </div>
+
+              <div class="field">
+                <label for="gender">Gender</label>
+                <select id="gender" name="gender">
+                  <option value="2">Male</option>
+                  <option value="1">Female</option>
+                </select>
               </div>
 
               <div class="field">
@@ -386,8 +406,6 @@
                 />
                 <span class="field-hint">Valid range: 10 – 300</span>
               </div>
-
-              <div class="row-br"></div>
 
               <div class="field">
                 <label for="ap_hi">Systolic BP (mmHg)</label>
@@ -422,26 +440,18 @@
               <div class="field">
                 <label for="cholesterol">Cholesterol Level</label>
                 <select id="cholesterol" name="cholesterol">
-                  <option value="1">Normal (&lt; 200 mg/dL)</option>
-                  <option value="2">Above Normal (200 – 239 mg/dL)</option>
-                  <option value="3">Well Above Normal (≥ 240 mg/dL)</option>
+                  <option value="1">&lt; 200 mg/dL</option>
+                  <option value="2">200 – 239 mg/dL</option>
+                  <option value="3">≥ 240 mg/dL</option>
                 </select>
               </div>
 
               <div class="field">
-                <label for="gluc">Glucose Level (Fasting)</label>
+                <label for="gluc">Glucose Level</label>
                 <select id="gluc" name="gluc">
-                  <option value="1">Normal (&lt; 100 mg/dL)</option>
-                  <option value="2">Above Normal (100 – 125 mg/dL)</option>
-                  <option value="3">Well Above Normal (≥ 126 mg/dL)</option>
-                </select>
-              </div>
-
-              <div class="field">
-                <label for="gender">Gender</label>
-                <select id="gender" name="gender">
-                  <option value="2">Male</option>
-                  <option value="1">Female</option>
+                  <option value="1">&lt; 100 mg/dL</option>
+                  <option value="2">100 – 125 mg/dL</option>
+                  <option value="3">≥ 126 mg/dL</option>
                 </select>
               </div>
 

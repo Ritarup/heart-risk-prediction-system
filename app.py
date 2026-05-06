@@ -83,7 +83,7 @@ def predict():
         if final_input[0] > 55: reasons.append("Age over 55")
         
         factor_msg = ", ".join(reasons) if reasons else "General health indicators."
-        warning_text = f"{missing_count} fields were missing — clinical averages used." if missing_count > 0 else ""
+        warning_text = f"{missing_count} fields were missing — population averages used." if missing_count > 0 else ""
 
         return render_template('index.html', prediction_text=result_text, factor=factor_msg, warning=warning_text)
     except Exception as e:
